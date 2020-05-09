@@ -74,14 +74,11 @@ while i <= len(cTestInput):
 i = 0
 j = 0
 
-while i <= len():
-    if len(cTestInput[0]) != len(cTestInput):
+while i <= len(cTestInput)-1:   # do we need the -1?    
+    if cTestInput[i][j] != (0 or 1):
         valid = False
         
-    elif cTestInput[i][j] != (0 or 1):
-        valid = False
-        
-    elif cTestInput[i][j] == 1:
+    elif cTestInput[i][j] == 1 and (i != j):
         groups.append(ij)
         i = i + 1
         
