@@ -3,7 +3,9 @@
 
 # In[2]:
 
+# PLEASE COMMENT ANY CHANGES, BOTH IN-LINE AND IN THE "COMMIT CHANGES" SECTION
 
+# IGNORE THE FOLLOWING, IT IS A TESTING BOX
 import numpy as np
 import math as mt
 
@@ -31,7 +33,7 @@ print(trial)
 trial2 = cTest[1][1]
 
 if trial == trial2:
-    print('bruh, why are the indices so scuffed')
+    print('indices')
     
 test2 = np.arange(6).reshape(2, 3)
 
