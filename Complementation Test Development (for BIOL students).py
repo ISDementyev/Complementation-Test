@@ -76,17 +76,17 @@ j = 0
 
 while i <= len(cTestInput)-1:   # do we need the -1?    
         for c in cTestInput[i]:
-                if cTestInput[i][c] != (0 or 1):
+                if cTestInput[i][c] not in [0, 1]:
                         valid = False
                 elif cTestInput[i][c] == 1:
                         groups.append(ic)
                 else: break
     
-        if cTestInput[i][j] != (0 or 1):
+        if cTestInput[i][j] not in [0, 1]:
                 valid = False
                 i = i + 1
         
-        elif cTestInput[i][j] == 1 and (i != j):
+        elif cTestInput[i][j] == 1:    # this statement "and (i != j):" should not be here, if i=j and the input is 1, its still a valid mutation group
                 groups.append(ij)
                 i = i + 1
         
@@ -99,7 +99,7 @@ while i <= len(cTestInput)-1:   # do we need the -1?
 # Exit Loop: now it's time to make post-appended array modifications ###################################
 # mu = mutations
 
-for mu in groups: # still haven't figured out how to check this
+for mu in groups: # still haven't figured out how best to write this
         m = mu-
         if groups(mu)
 
@@ -119,7 +119,7 @@ else:
 
 # IGNORE, this is a testing box. 
 
-cTestInput = ([1, 0, 1], [0, 1, 0], [0, 0, 1])
+cTestInput = ([1, 0, 1], [0, 1, 0], [1, 0, 1])
 
 print(len(cTestInput))
 
