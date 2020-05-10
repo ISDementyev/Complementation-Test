@@ -70,23 +70,41 @@ while i <= len(cTestInput):
     else: 
         i = i + 1
 
-# THE ACTUAL GROUP SCANNING # (NOT DONE)
+# THE ACTUAL GROUP SCANNING #
 i = 0
 j = 0
 
 while i <= len(cTestInput)-1:   # do we need the -1?    
-    if cTestInput[i][j] != (0 or 1):
-        valid = False
+        for c in cTestInput[i]:
+                if cTestInput[i][c] != (0 or 1):
+                        valid = False
+                elif cTestInput[i][c] == 1:
+                        groups.append(ic)
+                else: break
+    
+        if cTestInput[i][j] != (0 or 1):
+                valid = False
+                i = i + 1
         
-    elif cTestInput[i][j] == 1 and (i != j):
-        groups.append(ij)
-        i = i + 1
+        elif cTestInput[i][j] == 1 and (i != j):
+                groups.append(ij)
+                i = i + 1
         
-    elif cTestInput[i][j] == 0:
-        i = i + 1
+        elif cTestInput[i][j] == 0:
+                i = i + 1
         
-    else: i = i + 1
+        else: i = i + 1
+    
 
+# Exit Loop: now it's time to make post-appended array modifications ###################################
+# mu = mutations
+
+for mu in groups: # still haven't figured out how to check this
+        m = mu-
+        if groups(mu)
+
+        
+        
 # Finally, either we have an answer or made an error
 
 if valid == True:
