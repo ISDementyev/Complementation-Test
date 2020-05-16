@@ -1,4 +1,4 @@
 # Complementation-Test
-A Complementation Test Calculator, for anyone learning Mendelian Genetics. 
+A Complementation Test Calculator, for anyone learning Mendelian Genetics. All troubleshooting is done in Jupyter.
 
-# License Notice: This test abides by the GNU GPL v3.0 license. 
+# License Notice: GNU GPL v3.0
