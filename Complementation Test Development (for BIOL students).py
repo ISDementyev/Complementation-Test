@@ -32,7 +32,7 @@ while i <= len(cTestInput)-1:
 i = 0
 j = 0
 
-while i <= len(cTestInput)-1:   # do we need the -1?   # indentation is not optimal but not a big issue
+while i <= len(cTestInput)-1:   # SKIPPING THE SECOND ROW FOR SOME REASON
         c = 0  
         while c <= len(cTestInput[i])-1:
             if cTestInput[i][c] not in [0, 1]:
@@ -46,8 +46,9 @@ while i <= len(cTestInput)-1:   # do we need the -1?   # indentation is not opti
                     c = c + 1
                 else: c = c + 1                
                 
-            else: c = c + 1
-                
+            else: c = c + 1      # do NOT include pass functions; they will make the loop run indefinitely.
+            
+                            
         if cTestInput[i][j] not in [0, 1]:
             valid = False
             i = i + 1
@@ -57,9 +58,8 @@ while i <= len(cTestInput)-1:   # do we need the -1?   # indentation is not opti
     
             if mutGroupRow not in groups:
                 groups.append(mutGroupRow)
+                i = i + 1
             else: i = i + 1
-                        
-            i = i + 1
         
         elif cTestInput[i][j] == 0:
                 i = i + 1 
@@ -68,17 +68,22 @@ while i <= len(cTestInput)-1:   # do we need the -1?   # indentation is not opti
     
 
 # Exit Loop: now it's time to make post-appended array modifications ###################################
-# mu = mutations
 
-#for mu in groups: # still haven't figured out how best to write this
-#        m = mu-
-#        if groups(mu)
- 
+variant = []
+
+for gene in groups:
+    if len(gene) != 2:  # checks to make sure each sub-array is the correct length of 2
+        valid = False
+    else: variant.append(gene[::-1])
+
 
 # Finally, either we have an answer or made an error
 
 if valid == True:
     print(len(groups))
     print(groups)
-else: 
+elif valid == False: 
     print('ERROR: CHECK INPUT')
+else: print('ERROR: CONTACT DEV')
+
+print(variant)
