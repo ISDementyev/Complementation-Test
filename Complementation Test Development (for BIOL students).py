@@ -8,7 +8,7 @@
 ## THIS IS THE MAIN DEVELOPMENT "BOX" ##
 
 # Default settings + input
-cTestInput = ([1, 0, 1], [0, 1, 0], [1, 0, 1])
+cTestInput = ([1, 0, 1], [0, 1, 0], [1, 0, 1]).  # One == does not complement (-ve sign), Zero == does complement (+ve sign)
 groups = []
 groupRow = 0
 valid = True
@@ -69,21 +69,34 @@ while i <= len(cTestInput)-1:   # SKIPPING THE SECOND ROW FOR SOME REASON
 
 # Exit Loop: now it's time to make post-appended array modifications ###################################
 
-variant = []
+reverse = []
 
-for gene in groups:
+for gene in groups:  # fills variant up with the reverse of each sub-array
     if len(gene) != 2:  # checks to make sure each sub-array is the correct length of 2
         valid = False
-    else: variant.append(gene[::-1])
+    elif gene != gene[::-1]:
+        reverse.append(gene[::-1])
+    elif gene == gene[::-1]:
+        pass
+    else: 
+        valid = False
 
+check = 0
+
+while check <= len(groups)-1:
+    if groups[check][0] < groups[check][1]:
+        groups.pop(check)
+        check = check + 1
+    else: check = check + 1
 
 # Finally, either we have an answer or made an error
 
 if valid == True:
     print(len(groups))
-    print(groups)
+    print('groups:', groups)
 elif valid == False: 
     print('ERROR: CHECK INPUT')
 else: print('ERROR: CONTACT DEV')
 
-print(variant)
+
+print('reverse:', reverse)
